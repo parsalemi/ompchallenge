@@ -1,0 +1,27 @@
+<div class="w-[100vw] h-[100vh] bg-black text-blue-100 flex justify-center items-center">
+  <form [formGroup]="signInUser" class="flex flex-col gap-6 w-72 p-7 bg-indigo-500 rounded-2xl shadow-sm shadow-blue-200" (ngSubmit)="signIn()">
+    <label for="email">Email</label>
+    <input
+      class="bg-blue-900 w-full focus-visible:outline-none text-white font-bold rounded-xl px-3 py-2 text-center border border-blue-400"
+      autocomplete="off"
+      type="text"
+      name="email"
+      id="email"
+      value=" "
+      formControlName="email"
+    >
+    <label for="password" class="mt-5">Password</label>
+    <div class="relative">
+      <input
+        class="bg-blue-900 focus-visible:outline-none text-white font-bold rounded-xl -px-10 py-2 text-center border border-blue-400"
+        autocomplete="off"
+        [type]=" togglePass ? 'text' : 'password' "
+        id="password"
+        value=""
+        formControlName="password"
+      >
+      <i class="pi pi-eye absolute right-4 top-[35%]" (click)="showPass()"></i>
+    </div>
+    <button type="submit" class="bg-amber-300 rounded-2xl font-bold text-black mt-7 py-2 px-3 active:shadow-none shadow-[0_0_3px_black] hover:bg-amber-500 transition-all duration-200">Sign In</button>
+  </form>
+</div>

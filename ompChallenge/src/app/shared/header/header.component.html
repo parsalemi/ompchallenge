@@ -1,0 +1,7 @@
+<div class="w-full h-32 bg-black flex flex-row justify-around items-center text-blue-100">
+  <div>
+    <h1>{{fullName | async}}</h1>
+    <h1 class="mt-4">Your ID : {{id | async}}</h1>
+  </div>
+  <button (click)="signOut()" class="px-4 py-3 bg-indigo-500 rounded-2xl font-bold hover:bg-indigo-600 active:bg-indigo-800" routerLink="signIn">Log out</button>
+</div>
