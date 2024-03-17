@@ -1,0 +1,14 @@
+<div class="w-full h-32 bg-black flex flex-row justify-around items-center text-blue-100">
+  <i class="pi pi-chevron-left hover:cursor-pointer bg-indigo-500 p-5" (click)="goBack()"></i>
+  <div>
+    <div class="flex gap-3 items-center">
+      <i class="pi pi-id-card"></i>
+      <h1>{{fullName | async}}</h1>
+    </div>
+    <div class="flex gap-3 mt-4 items-center">
+      <i class="pi pi-user"></i>
+      <h1 class="">Your ID : {{id | async}}</h1>
+    </div>
+  </div>
+  <button (click)="signOut()" class="px-4 py-3 bg-indigo-500 rounded-2xl font-bold hover:bg-indigo-600 active:bg-indigo-800" routerLink="signIn">Log out<i class="pi pi-sign-out ml-4"></i></button>
+</div>

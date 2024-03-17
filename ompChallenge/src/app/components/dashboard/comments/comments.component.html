@@ -1,0 +1,21 @@
+<div *ngIf="comments$ | async as comments" class="w-full h-full p-5 flex flex-col gap-10 items-center">
+  <button class="px-5 py-3 bg-indigo-500 hover:bg-indigo-700 active:bg-indigo-600" (click)= "inProgress ? stopGenerate() : generateComment()">
+    <i class="pi pi-print mr-3"></i>
+    {{inProgress ? 'Stop Generating' : 'Generate Comments'}}
+  </button>
+
+  <table class="border-collapse border border-blue-100">
+    <thead class="border-2 border-blue-100 font-extrabold">
+    <tr class="w-full">
+      <th class="border-r-2 w-[20%] p-5">DATE</th>
+      <th class="w-[80%] p-5">CONTENT</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let comment of comments" class="border-b-2">
+      <td class="w-[20%] py-10 border-r-2 text-center">{{comment.createdAt}}</td>
+      <td class="w-[80%] px-5">{{comment.content}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
